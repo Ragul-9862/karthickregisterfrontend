@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>FAT TO FIT 🔥 | Transform Your Life</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --red: #FF2233;
+      --red-glow: #FF2233aa;
+      --aqua: #00F5FF;
+      --aqua-glow: #00F5FFaa;
+      --dark: #050810;
+      --dark2: #0a0f1e;
+      --dark3: #0f1628;
+      --card: #0d1425cc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--dark);
+      color: #e0f7fa;
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 245, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 255, 0.04) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: gridMove 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(30px);
+      }
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+
+    .orb-red {
+      background: var(--red);
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+
+    .orb-aqua {
+      background: var(--aqua);
+      width: 250px;
+      height: 250px;
+      bottom: 200px;
+      left: -100px;
+      animation-delay: 4s;
+    }
+
+    @keyframes orbFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(30px) scale(1.1);
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, #0a0f1e 0%, #050810 60%, #110208 100%);
+      padding: 40px 20px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--red), var(--aqua), transparent);
+      animation: lineGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes lineGlow {
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+        box-shadow: 0 0 20px var(--aqua);
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--red), #8B0000);
+      color: white;
+      font-family: 'Orbitron', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      animation: badgePulse 2s ease-in-out infinite;
+      border: 1px solid rgba(255, 34, 51, 0.5);
+    }
+
+    @keyframes badgePulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 10px var(--red-glow);
+      }
+
+      50% {
+        box-shadow: 0 0 25px var(--red-glow), 0 0 50px rgba(255, 34, 51, 0.3);
+      }
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 72px;
+      line-height: 0.9;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, var(--red) 0%, #FF6B35 30%, var(--aqua) 70%, #0099CC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: titlePulse 4s ease-in-out infinite;
+      filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.3));
+    }
+
+    @keyframes titlePulse {
+
+      0%,
+      100% {
+        filter: drop-shadow(0 0 15px rgba(255, 34, 51, 0.5));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 30px rgba(0, 245, 255, 0.7));
+      }
+    }
+
+    .hero-sub {
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: var(--aqua);
+      margin-top: 8px;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease 0.3s both;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: #9bb8cc;
+      margin: 16px 0 24px;
+      line-height: 1.6;
+      animation: fadeInUp 1s ease 0.5s both;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .stat-chip {
+      background: rgba(0, 245, 255, 0.07);
+      border: 1px solid rgba(0, 245, 255, 0.2);
+      border-radius: 50px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--aqua);
+      animation: chipIn 0.5s ease both;
+      transition: all 0.3s;
+    }
+
+    .stat-chip:hover {
+      background: rgba(0, 245, 255, 0.15);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .stat-chip .icon-red {
+      color: var(--red);
+    }
+
+    /* Fire motivational section */
+    .motive-section {
+      padding: 30px 20px;
+      background: linear-gradient(180deg, transparent, rgba(255, 34, 51, 0.05), transparent);
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, var(--red), var(--aqua));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quote-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 34, 51, 0.2);
+      border-left: 3px solid var(--red);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+      animation: slideInLeft 0.6s ease both;
+      transition: all 0.3s;
+    }
+
+    .quote-card:nth-child(odd) {
+      border-left-color: var(--aqua);
+      border-color: rgba(0, 245, 255, 0.2);
+    }
+
+    .quote-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      font-size: 80px;
+      color: rgba(255, 34, 51, 0.08);
+      font-family: 'Bebas Neue', sans-serif;
+    }
+
+    .quote-card:nth-child(odd)::before {
+      color: rgba(0, 245, 255, 0.08);
+    }
+
+    .quote-card:active {
+      transform: scale(0.98);
+      box-shadow: 0 0 20px rgba(255, 34, 51, 0.3);
+    }
+
+    .quote-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: #e0f7fa;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .quote-author {
+      font-size: 12px;
+      color: var(--red);
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 1px;
+    }
+
+    .quote-card:nth-child(odd) .quote-author {
+      color: var(--aqua);
+    }
+
+    /* Program cards */
+    .program-section {
+      padding: 0 20px 30px;
+    }
+
+    .prog-card {
+      background: linear-gradient(135deg, rgba(13, 20, 37, 0.95), rgba(5, 8, 16, 0.98));
+      border: 1px solid rgba(0, 245, 255, 0.15);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .prog-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red), var(--aqua));
+    }
+
+    .prog-card:active {
+      transform: scale(0.97) translateY(2px);
+      box-shadow: 0 10px 40px rgba(0, 245, 255, 0.2);
+    }
+
+    .prog-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .prog-icon-red {
+      background: linear-gradient(135deg, rgba(255, 34, 51, 0.25), rgba(255, 34, 51, 0.05));
+      border: 1px solid rgba(255, 34, 51, 0.3);
+      color: var(--red);
+    }
+
+    .prog-icon-aqua {
+      background: linear-gradient(135deg, rgba(0, 245, 255, 0.25), rgba(0, 245, 255, 0.05));
+      border: 1px solid rgba(0, 245, 255, 0.3);
+      color: var(--aqua);
+    }
+
+    .prog-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .prog-desc {
+      font-size: 13px;
+      color: #7a9eb0;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .prog-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .pill-red {
+      background: rgba(255, 34, 51, 0.15);
+      color: var(--red);
+      border: 1px solid rgba(255, 34, 51, 0.3);
+    }
+
+    .pill-aqua {
+      background: rgba(0, 245, 255, 0.1);
+      color: var(--aqua);
+      border: 1px solid rgba(0, 245, 255, 0.25);
+    }
+
+    /* Schedule */
+    .schedule-section {
+      padding: 0 20px 30px;
+    }
+
+    .schedule-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(13, 20, 37, 0.8);
+      border: 1px solid rgba(0, 245, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      transition: all 0.3s;
+    }
+
+    .schedule-row:active {
+      transform: scale(0.98);
+      background: rgba(0, 245, 255, 0.05);
+    }
+
+    .sched-time {
+      font-family: 'Orbitron', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--aqua);
+      min-width: 70px;
+      text-align: center;
+      background: rgba(0, 245, 255, 0.08);
+      border: 1px solid rgba(0, 245, 255, 0.2);
+      border-radius: 8px;
+      padding: 6px 8px;
+      line-height: 1.3;
+    }
+
+    .sched-time.evening {
+      color: var(--red);
+      background: rgba(255, 34, 51, 0.08);
+      border-color: rgba(255, 34, 51, 0.2);
+    }
+
+    .sched-info {
+      flex: 1;
+    }
+
+    .sched-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #d0ecf4;
+    }
+
+    .sched-detail {
+      font-size: 12px;
+      color: #5a7a8a;
+      margin-top: 2px;
+    }
+
+    /* Enrollment form */
+    .form-section {
+      padding: 0 20px 40px;
+    }
+
+    .form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: 2px;
+      text-align: center;
+      background: linear-gradient(90deg, var(--aqua), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+
+    .form-subtitle {
+      text-align: center;
+      font-size: 13px;
+      color: #5a8a9a;
+      margin-bottom: 24px;
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 1px;
+    }
+
+    .form-card {
+      background: linear-gradient(145deg, rgba(13, 20, 37, 0.95), rgba(5, 8, 16, 0.98));
+      border: 1px solid rgba(0, 245, 255, 0.12);
+      border-radius: 20px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--aqua), var(--red));
+      background-size: 200% 100%;
+      animation: gradientShift 3s linear infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: 200% 0%;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--aqua);
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .form-label .required {
+      color: var(--red);
+    }
+
+    .form-label .optional {
+      color: #3a5a6a;
+      font-size: 10px;
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(0, 245, 255, 0.04);
+      border: 1px solid rgba(0, 245, 255, 0.15);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 15px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      color: #e0f7fa;
+      outline: none;
+      transition: all 0.3s;
+      -webkit-appearance: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--aqua);
+      background: rgba(0, 245, 255, 0.08);
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.15), inset 0 0 10px rgba(0, 245, 255, 0.05);
+    }
+
+    .form-input::placeholder {
+      color: #2a4a5a;
+    }
+
+    .form-input.red-focus:focus {
+      border-color: var(--red);
+      background: rgba(255, 34, 51, 0.06);
+      box-shadow: 0 0 20px rgba(255, 34, 51, 0.15), inset 0 0 10px rgba(255, 34, 51, 0.05);
+    }
+
+    select.form-input option {
+      background: #0a0f1e;
+      color: #e0f7fa;
+    }
+
+    .row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.2), transparent);
+      margin: 22px 0;
+    }
+
+    .section-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: var(--red);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Checkbox */
+    .check-group {
+      margin-bottom: 14px;
+    }
+
+    .check-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 34, 51, 0.15);
+      background: rgba(255, 34, 51, 0.04);
+      transition: all 0.3s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .check-label:active {
+      transform: scale(0.98);
+    }
+
+    .check-label.aqua-check {
+      border-color: rgba(0, 245, 255, 0.15);
+      background: rgba(0, 245, 255, 0.04);
+    }
+
+    .check-label:has(input:checked) {
+      border-color: var(--red);
+      background: rgba(255, 34, 51, 0.1);
+      box-shadow: 0 0 15px rgba(255, 34, 51, 0.15);
+    }
+
+    .check-label.aqua-check:has(input:checked) {
+      border-color: var(--aqua);
+      background: rgba(0, 245, 255, 0.08);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.15);
+    }
+
+    .custom-check {
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 34, 51, 0.5);
+      border-radius: 5px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.3s;
+    }
+
+    .aqua-check .custom-check {
+      border-color: rgba(0, 245, 255, 0.5);
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"]:checked+.custom-check {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .aqua-check input[type="checkbox"]:checked+.custom-check {
+      background: var(--aqua);
+      border-color: var(--aqua);
+    }
+
+    .check-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: #9bb8cc;
+      line-height: 1.4;
+    }
+
+    .check-sub {
+      font-size: 11px;
+      color: #3a5a6a;
+      margin-top: 3px;
+    }
+
+    /* Year checkboxes */
+    .year-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .year-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid rgba(0, 245, 255, 0.2);
+      border-radius: 10px;
+      background: transparent;
+      font-family: 'Orbitron', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: #3a6a7a;
+      cursor: pointer;
+      transition: all 0.3s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .year-btn.active-2025 {
+      border-color: var(--red);
+      color: var(--red);
+      background: rgba(255, 34, 51, 0.1);
+      box-shadow: 0 0 15px rgba(255, 34, 51, 0.2);
+    }
+
+    .year-btn.active-2026 {
+      border-color: var(--aqua);
+      color: var(--aqua);
+      background: rgba(0, 245, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.2);
+    }
+
+    /* Submit button */
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--red) 0%, #cc0011 50%, var(--red) 100%);
+      background-size: 200% 100%;
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      border: none;
+      border-radius: 14px;
+      padding: 18px;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 30px rgba(255, 34, 51, 0.4);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.15);
+      transform: skewX(-20deg);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        left: -60%;
+      }
+
+      50%,
+      100% {
+        left: 120%;
+      }
+    }
+
+    .submit-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 15px rgba(255, 34, 51, 0.3);
+    }
+
+    /* Success modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 8, 16, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-card {
+      background: linear-gradient(145deg, #0a0f1e, #050810);
+      border: 1px solid rgba(0, 245, 255, 0.3);
+      border-radius: 24px;
+      padding: 36px 24px;
+      text-align: center;
+      width: 100%;
+      max-width: 360px;
+      transform: scale(0.8);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modal-overlay.show .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--aqua), var(--red));
+    }
+
+    .modal-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(0, 245, 255, 0.15), rgba(0, 245, 255, 0.05));
+      border: 2px solid var(--aqua);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--aqua);
+      animation: iconPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes iconPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 40px rgba(0, 245, 255, 0.6), 0 0 80px rgba(0, 245, 255, 0.2);
+      }
+    }
+
+    .modal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, var(--aqua), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .modal-text {
+      font-size: 15px;
+      color: #7a9eb0;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-close {
+      background: linear-gradient(135deg, var(--aqua), #0099CC);
+      color: #050810;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 40px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+
+    .modal-close:active {
+      transform: scale(0.96);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Scroll animations */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Pulse dot */
+    .pulse-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulseDot 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseDot {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 34, 51, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 34, 51, 0);
+      }
+    }
+
+    /* Counter animation */
+    .counter {
+      font-family: 'Orbitron', monospace;
+    }
+
+    /* Fire emoji animation */
+    .fire-emoji {
+      display: inline-block;
+      animation: fireShake 0.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes fireShake {
+      0% {
+        transform: rotate(-5deg) scale(1);
+      }
+
+      100% {
+        transform: rotate(5deg) scale(1.1);
+      }
+    }
+
+    /* Neon text */
+    .neon-red {
+      color: var(--red);
+      text-shadow: 0 0 10px rgba(255, 34, 51, 0.8);
+    }
+
+    .neon-aqua {
+      color: var(--aqua);
+      text-shadow: 0 0 10px rgba(0, 245, 255, 0.8);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    /* Glitch effect for title */
+    @keyframes glitch {
+
+      0%,
+      90%,
+      100% {
+        transform: translateX(0);
+      }
+
+      92% {
+        transform: translateX(-2px);
+      }
+
+      94% {
+        transform: translateX(2px);
+      }
+
+      96% {
+        transform: translateX(-1px);
+      }
+    }
+
+    .hero-title {
+      animation: titlePulse 4s ease-in-out infinite, glitch 8s ease-in-out infinite;
+    }
+
+    /* Bottom safe area */
+    .safe-bottom {
+      height: env(safe-area-inset-bottom, 20px);
+    }
+  </style>
+  <p class="hero-desc">
+</head>
+
+<body>
+  <div class="orb orb-red"></div>
+  <div class="orb orb-aqua"></div>
+
+  <div class="content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="flex items-center justify-center mb-4">
+        <img class="text-center w-[200px]" src="logo.jpeg" alt="" srcset="">
+      </div>
+      <div class="badge">🔥 LIMITED SPOTS AVAILABLE 🔥</div>
+      <div class="hero-title">FAT<br>TO<br>FIT</div>
+      <div class="hero-sub">TRANSFORM · IGNITE · CONQUER</div>
+      <p class="hero-desc">
+        💥 <span class="neon-red">2026 Weight Loss Challenge</span> is BACK! <br>
+        Transform yourself in just <span class="neon-aqua">45 DAYS</span> 💪🔥 <br><br>
+        📅 Starts from <strong>April 1st</strong>
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-chip">
+          <i data-lucide="calendar" class="icon-red" style="width:14px;height:14px;"></i>
+          45 Days
+        </div>
+            <div class="stat-chip">
+          <i data-lucide="zap" class="icon-red" style="width:14px;height:14px;"></i>
+          20 Sessions
+        </div>
+        <div class="stat-chip">
+          <i data-lucide="music" style="width:14px;height:14px;color:var(--red)"></i>
+          2 Zumba
+        </div>
+        <div class="stat-chip">🥗 Free Diet Plan</div>
+        <div class="stat-chip">
+          <i data-lucide="sun" style="width:14px;height:14px;color:var(--red)"></i>
+          Morning
+        </div>
+        <div class="stat-chip">
+          <i data-lucide="moon" style="width:14px;height:14px;color:var(--red)"></i>
+          Evening
+        </div>
+        <div class="stat-chip">
+          <i data-lucide="users" style="width:14px;height:14px;color:var(--red)"></i>
+          Group
+        </div>
+      </div>
+    </section>
+
+    <!-- MOTIVATIONAL QUOTES -->
+    <section class="motive-section">
+      <div class="section-title">
+        <span class="fire-emoji">🔥</span>
+        FUEL YOUR FIRE
+      </div>
+
+      <div class="quote-card scroll-reveal">
+        <p class="quote-text">Your body can stand almost anything. It's your mind you have to convince. Every drop of
+          sweat is a fat cell screaming goodbye!</p>
+        <p class="quote-author">— THE TRANSFORMATION CODE</p>
+      </div>
+
+      <div class="quote-card scroll-reveal">
+        <p class="quote-text">The pain you feel today will be the strength you feel tomorrow. You didn't come this far
+          to only come this far. KEEP MOVING.</p>
+        <p class="quote-author">— WARRIOR MINDSET</p>
+      </div>
+
+      <div class="quote-card scroll-reveal">
+        <p class="quote-text">Zumba isn't just exercise — it's a PARTY where your fat doesn't survive. Dance your way to
+          the body you deserve!</p>
+        <p class="quote-author">— FAT TO FIT MANIFESTO</p>
+      </div>
+
+      <div class="quote-card scroll-reveal">
+        <p class="quote-text">Two sessions a day — morning to ignite, evening to incinerate. While others sleep on their
+          goals, you're out here BECOMING ONE.</p>
+        <p class="quote-author">— THE GRIND GOSPEL</p>
+      </div>
+    </section>
+
+    <!-- PROGRAM DETAILS -->
+    <section class="program-section">
+      <div class="section-title scroll-reveal">
+        <i data-lucide="dumbbell" style="width:24px;height:24px;color:var(--aqua)"></i>
+        THE PROGRAM
+      </div>
+
+      <div class="prog-card scroll-reveal">
+        <div class="prog-icon-wrap prog-icon-red">
+          <i data-lucide="flame" style="width:24px;height:24px;"></i>
+        </div>
+        <div class="prog-title">POWER BURN SESSIONS</div>
+        <p class="prog-desc">20 high-intensity group sessions combining cardio blasts, strength training, and
+          fat-burning circuits. Every session is engineered to torch maximum calories and reshape your physique.</p>
+        <div class="prog-pills">
+          <span class="pill pill-red">20 SESSIONS</span>
+          <span class="pill pill-aqua">GROUP FORMAT</span>
+          <span class="pill pill-red">HIIT + CARDIO</span>
+          <span class="pill pill-aqua">ALL LEVELS</span>
+        </div>
+      </div>
+
+      <div class="prog-card scroll-reveal">
+        <div class="prog-icon-wrap prog-icon-aqua">
+          <i data-lucide="music-2" style="width:24px;height:24px;"></i>
+        </div>
+        <div class="prog-title">ZUMBA FIRE SESSIONS</div>
+        <p class="prog-desc">2 explosive Zumba sessions that turn your workout into a celebration. Dance-based fat
+          burning that doesn't feel like work — it feels like FREEDOM. Burn 500+ calories per session!</p>
+        <div class="prog-pills">
+          <span class="pill pill-aqua">2 SESSIONS</span>
+          <span class="pill pill-red">500+ CALORIES</span>
+          <span class="pill pill-aqua">DANCE FITNESS</span>
+          <span class="pill pill-red">EPIC MUSIC</span>
+        </div>
+      </div>
+
+      <div class="prog-card scroll-reveal">
+        <div class="prog-icon-wrap prog-icon-red">
+          <i data-lucide="clock" style="width:24px;height:24px;"></i>
+        </div>
+        <div class="prog-title">DUAL SESSION POWER</div>
+        <p class="prog-desc">Choose your battle time. Morning warriors rise before the world wakes up. Evening warriors
+          end the day with fire. Both sessions — same intensity, same results, your choice.</p>
+        <div class="prog-pills">
+          <span class="pill pill-red">☀️ MORNING</span>
+          <span class="pill pill-aqua">🌙 EVENING</span>
+          <span class="pill pill-red">FLEXIBLE</span>
+          <span class="pill pill-aqua">DAILY</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="prog-card scroll-reveal">
+        <div class="prog-icon-wrap prog-icon-aqua">
+          <i data-lucide="award" style="width:24px;height:24px;"></i>
+        </div>
+        <div class="prog-title">REWARDS & RECOGNITION</div>
+        <p class="prog-desc">
+          Push beyond your limits and get rewarded! Top performers will receive
+          <span style="color:#FF2233;font-weight:700;">exciting gifts</span> and
+          <span style="color:#00F5FF;font-weight:700;">winner medals</span> to celebrate their transformation journey.
+        </p>
+        <div class="prog-pills">
+          <span class="pill pill-red">🏆 WINNER MEDALS</span>
+          <span class="pill pill-aqua">🎁 EXCITING GIFTS</span>
+          <span class="pill pill-red">🔥 PERFORMANCE BASED</span>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- SCHEDULE -->
+    <section class="schedule-section">
+      <div class="section-title scroll-reveal">
+        <i data-lucide="calendar" style="width:24px;height:24px;color:var(--red)"></i>
+        SESSION SCHEDULE
+      </div>
+
+      <div class="schedule-row scroll-reveal">
+        <div class="sched-time">6:45 AM<br>–<br>7:45 AM</div>
+        <div class="sched-info">
+          <div class="sched-name">☀️ Morning Power Burn</div>
+          <div class="sched-detail">HIIT · Cardio · Strength Circuit</div>
+        </div>
+        <i data-lucide="flame" style="width:18px;height:18px;color:var(--red);flex-shrink:0"></i>
+      </div>
+
+      <div class="schedule-row scroll-reveal">
+        <div class="sched-time evening">6:15 PM<br>–<br>7:15 PM</div>
+        <div class="sched-info">
+          <div class="sched-name">🌙 Evening Incinerate</div>
+          <div class="sched-detail">Fat Burn · Core · Stretch</div>
+        </div>
+        <i data-lucide="zap" style="width:18px;height:18px;color:var(--aqua);flex-shrink:0"></i>
+      </div>
+
+      <div class="schedule-row scroll-reveal">
+        <div class="sched-time">SPECIAL</div>
+        <div class="sched-info">
+          <div class="sched-name">💃 Zumba Fire Party</div>
+          <div class="sched-detail">2 Special Sessions · Weekends</div>
+        </div>
+        <i data-lucide="music" style="width:18px;height:18px;color:var(--red);flex-shrink:0"></i>
+      </div>
+
+      <div class="schedule-row scroll-reveal">
+        <div class="sched-time evening">TOTAL</div>
+        <div class="sched-info">
+          <div class="sched-name">🏆 20 Sessions Complete</div>
+          <div class="sched-detail">Full Program · Maximum Results</div>
+        </div>
+        <i data-lucide="trophy" style="width:18px;height:18px;color:var(--aqua);flex-shrink:0"></i>
+      </div>
+    </section>
+
+    <!-- ENROLLMENT FORM -->
+    <section class="form-section">
+      <div class="form-title scroll-reveal">JOIN THE SQUAD</div>
+      <div class="form-subtitle scroll-reveal">SECURE YOUR TRANSFORMATION</div>
+
+      <div class="form-card scroll-reveal">
+
+        <!-- PERSONAL INFO -->
+        <div class="section-label">
+          <i data-lucide="user" style="width:16px;height:16px;color:var(--red)"></i>
+          PERSONAL INFO
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <i data-lucide="user" style="width:13px;height:13px;"></i>
+            FULL NAME <span class="required">*</span>
+          </label>
+          <input id="name" type="text" class="form-input" placeholder="Your warrior name..." />
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <label class="form-label">
+              <i data-lucide="calendar" style="width:13px;height:13px;"></i>
+              AGE <span class="required">*</span>
+            </label>
+            <input id="age" type="number" class="form-input red-focus" placeholder="Years" min="10" max="80" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">
+              <i data-lucide="phone" style="width:13px;height:13px;"></i>
+              PHONE <span class="required">*</span>
+            </label>
+            <input id="phone" type="tel" class="form-input red-focus" placeholder="+91 XXXXX" />
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- BODY STATS -->
+        <div class="section-label">
+          <i data-lucide="activity" style="width:16px;height:16px;color:var(--aqua)"></i>
+          BODY STATS <span
+            style="font-size:11px;color:#2a4a5a;margin-left:8px;font-family:'Rajdhani',sans-serif;letter-spacing:0;">Optional</span>
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <label class="form-label">
+              <i data-lucide="ruler" style="width:13px;height:13px;"></i>
+              HEIGHT <span class="optional">(optional)</span>
+            </label>
+            <input id="height" type="number" class="form-input" placeholder="cm" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">
+              <i data-lucide="scale" style="width:13px;height:13px;"></i>
+              WEIGHT <span class="optional">(optional)</span>
+            </label>
+            <input id="weight" type="number" class="form-input red-focus" placeholder="kg" />
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- GOAL -->
+        <div class="section-label">
+          <i data-lucide="target" style="width:16px;height:16px;color:var(--red)"></i>
+          WEIGHT LOSS GOAL <span
+            style="font-size:11px;color:#2a4a5a;margin-left:8px;font-family:'Rajdhani',sans-serif;letter-spacing:0;">Optional</span>
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <label class="form-label">
+              <i data-lucide="trending-down" style="width:13px;height:13px;color:var(--aqua)"></i>
+              MIN KG <span class="optional">(optional)</span>
+            </label>
+            <input id="goal-min" type="number" class="form-input" placeholder="e.g. 5 kg" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">
+              <i data-lucide="trending-down" style="width:13px;height:13px;color:var(--red)"></i>
+              MAX KG <span class="optional">(optional)</span>
+            </label>
+            <input id="goal-max" type="number" class="form-input red-focus" placeholder="e.g. 15 kg" />
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- SESSION PREFERENCE -->
+        <div class="section-label">
+          <i data-lucide="clock" style="width:16px;height:16px;color:var(--aqua)"></i>
+          SESSION PREFERENCE
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            <i data-lucide="sun" style="width:13px;height:13px;"></i>
+            PREFERRED TIME <span class="required">*</span>
+          </label>
+          <select id="session" class="form-input">
+            <option value="">Choose your battle time...</option>
+            <option value="morning">☀️ Morning (6:45 AM – 7:45 AM)-Mon / Wed / Fri</option>
+            <option value="evening">🌙 Evening (6:15 PM – 7:15 PM)-Tue / Thu / Sat</option>
+            <option value="both">⚡ Both Sessions (Maximum Results!)</option>
+          </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- PREVIOUS PARTICIPATION -->
+        <div class="section-label">
+          <i data-lucide="history" style="width:16px;height:16px;color:var(--red)"></i>
+          PREVIOUS PARTICIPATION
+        </div>
+
+        <p style="font-size:13px;color:#4a7a8a;margin-bottom:12px;">Have you participated in our program before?</p>
+
+        <div class="year-row">
+          <button class="year-btn" id="btn2025" onclick="toggleYear('2025')">
+            <i data-lucide="check-circle" style="width:16px;height:16px;" id="icon2025"></i>
+            2025
+          </button>
+          <button class="year-btn" id="btn2026" onclick="toggleYear('2026')">
+            <i data-lucide="check-circle" style="width:16px;height:16px;" id="icon2026"></i>
+            2026
+          </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- MEDICAL CONDITIONS -->
+        <div class="section-label">
+          <i data-lucide="heart-pulse" style="width:16px;height:16px;color:var(--aqua)"></i>
+          HEALTH DECLARATION
+        </div>
+
+        <div class="check-group">
+          <label class="check-label aqua-check">
+            <input type="checkbox" id="medical" />
+            <div class="custom-check">
+              <i data-lucide="check" style="width:12px;height:12px;color:white;display:none;" id="medCheck"></i>
+            </div>
+            <div>
+              <div class="check-text">I have a medical condition</div>
+              <div class="check-sub">Diabetes, Heart condition, Joint issues, Hypertension, Pregnancy, or any other
+                condition requiring special attention</div>
+            </div>
+          </label>
+        </div>
+
+        <div id="medical-detail" style="display:none;" class="form-group">
+          <label class="form-label" style="color:var(--aqua);">
+            <i data-lucide="file-text" style="width:13px;height:13px;"></i>
+            DESCRIBE CONDITION
+          </label>
+          <input id="medical-text" type="text" class="form-input" placeholder="Please describe your condition..." />
+        </div>
+
+        <div class="check-group">
+          <label class="check-label">
+            <input type="checkbox" id="consent" />
+            <div class="custom-check">
+              <i data-lucide="check" style="width:12px;height:12px;color:white;display:none;" id="consentCheck"></i>
+            </div>
+            <div>
+              <div class="check-text">I confirm all information is accurate & I'm ready to TRANSFORM 🔥</div>
+              <div class="check-sub">I understand the program terms and commit to my fat-to-fit journey</div>
+            </div>
+          </label>
+        </div>
+
+        <div style="height:24px;"></div>
+
+
+        <div class="prog-card scroll-reveal" style="position:relative;">
+
+          <!-- TOP RIGHT CHECKBOX -->
+          <label style="position:absolute; top:12px; right:12px; cursor:pointer;">
+            <input type="checkbox" id="pricingCheck" style="display:none;" />
+            <div style="
+      width:22px;
+      height:22px;
+      border:2px solid #FF2233;
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,34,51,0.05);
+    ">
+              <i data-lucide="check" id="pricingIcon" style="width:14px;height:14px;color:#FF2233;display:none;"></i>
+            </div>
+          </label>
+
+          <div class="prog-icon-wrap prog-icon-red">
+            <i data-lucide="indian-rupee" style="width:24px;height:24px;"></i>
+          </div>
+
+          <div class="prog-title">PRICING</div>
+
+          <p class="prog-desc">
+            Choose your plan and start your transformation journey today.
+          </p>
+
+          <div class="prog-pills">
+            <span class="pill pill-red">👤 Members – ₹999</span>
+            <span class="pill pill-aqua">👤 Non-Members – ₹3999</span>
+            <span class="pill pill-red">⏳ 45 DAYS</span>
+          </div>
+        </div>
+        <div style="height:24px;"></div>
+
+        <div class="prog-card scroll-reveal" style="position:relative;">
+
+          <!-- TOP RIGHT CHECKBOX -->
+          <label style="position:absolute; top:12px; right:12px; cursor:pointer;">
+            <input type="checkbox" id="refreshmentCheck" style="display:none;" />
+            <div style="
+      width:22px;
+      height:22px;
+      border:2px solid #00F5FF;
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,245,255,0.05);
+    ">
+              <i data-lucide="check" id="refreshmentIcon"
+                style="width:14px;height:14px;color:#00F5FF;display:none;"></i>
+            </div>
+          </label>
+
+          <div class="prog-icon-wrap prog-icon-aqua">
+            <i data-lucide="coffee" style="width:24px;height:24px;"></i>
+          </div>
+
+          <div class="prog-title">REFRESHMENTS</div>
+
+          <p class="prog-desc">
+            Stay refreshed after your intense workout sessions.
+          </p>
+
+          <div class="prog-pills">
+            <span class="pill pill-aqua">🥤 Fresh Juice – ₹500</span>
+            <span class="pill pill-red">POST WORKOUT</span>
+            <span class="pill pill-aqua">OPTIONAL</span>
+          </div>
+        </div>
+        <div style="height:24px;"></div>
+        <button class="submit-btn" onclick="submitForm()">
+          <span style="display:flex;align-items:center;justify-content:center;gap:10px;">
+            <i data-lucide="zap" style="width:20px;height:20px;"></i>
+            ENROLL NOW — IGNITE!
+            <i data-lucide="flame" style="width:20px;height:20px;"></i>
+          </span>
+        </button>
+
+        <p
+          style="text-align:center;font-size:11px;color:#2a4a5a;margin-top:14px;font-family:'Orbitron',monospace;letter-spacing:1px;">
+          <span class="pulse-dot"></span>
+          &nbsp;LIMITED SPOTS · ACT FAST&nbsp;
+          <span class="pulse-dot"></span>
+        </p>
+
+      </div>
+    </section>
+    <section class="program-section">
+
+
+      <div class="prog-card scroll-reveal">
+        <div class="prog-title">REGISTER NOW</div>
+        <p class="prog-desc">
+          Call or WhatsApp to book your slot now!
+        </p>
+        <div class="prog-pills">
+          <span class="pill pill-aqua">📞 9080728895</span>
+          <span class="pill pill-red">📞 9840404960</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="safe-bottom"></div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card">
+      <div class="modal-icon">
+        <i data-lucide="check-circle-2" style="width:40px;height:40px;"></i>
+      </div>
+      <div class="modal-title">YOU'RE IN!</div>
+      <p class="modal-text">Welcome to the <strong style="color:var(--red);">Fat to Fit</strong> family! 🔥 Your
+        transformation journey officially starts NOW. Get ready to <strong style="color:var(--aqua);">burn, sweat, and
+          conquer!</strong> We'll contact you shortly with your session details.</p>
+      <button class="modal-close" onclick="closeModal()">LET'S GO! 🔥</button>
+    </div>
+  </div>
+
+  <script>
+    // Init Lucide icons
+    lucide.createIcons();
+
+    // Year toggle
+    const yearState = { '2025': false, '2026': false };
+
+    function toggleYear(year) {
+      yearState[year] = !yearState[year];
+      const btn = document.getElementById('btn' + year);
+      const isActive = yearState[year];
+
+      if (year === '2025') {
+        btn.className = 'year-btn' + (isActive ? ' active-2025' : '');
+      } else {
+        btn.className = 'year-btn' + (isActive ? ' active-2026' : '');
+      }
+
+      // Re-init icons after class change
+      lucide.createIcons();
+    }
+
+    // Medical checkbox
+    document.getElementById('medical').addEventListener('change', function () {
+      const detail = document.getElementById('medical-detail');
+      const check = document.getElementById('medCheck');
+      if (this.checked) {
+        detail.style.display = 'block';
+        detail.style.animation = 'fadeInUp 0.4s ease';
+        check.style.display = 'block';
+      } else {
+        detail.style.display = 'none';
+        check.style.display = 'none';
+      }
+    });
+
+    // Consent checkbox
+    document.getElementById('consent').addEventListener('change', function () {
+      const check = document.getElementById('consentCheck');
+      check.style.display = this.checked ? 'block' : 'none';
+    });
+
+    // Aqua check for other checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', function () {
+        const checkIcon = this.parentElement.querySelector('[data-lucide="check"]');
+        if (checkIcon) checkIcon.style.display = this.checked ? 'block' : 'none';
+        lucide.createIcons();
+      });
+    });
+
+    // Form submission
+    async function submitForm() {
+  const data = {
+    name: document.getElementById('name').value,
+    age: document.getElementById('age').value,
+    phone: document.getElementById('phone').value,
+    session: document.getElementById('session').value,
+    height: document.getElementById('height').value,
+    weight: document.getElementById('weight').value,
+    goalMin: document.getElementById('goal-min').value,
+    goalMax: document.getElementById('goal-max').value,
+    medical: document.getElementById('medical').checked,
+    medicalText: document.getElementById('medical-text').value
+  };
+
+  if (!data.name || !data.age || !data.phone || !data.session) {
+    alert("Fill required fields");
+    return;
+  }
+
+  try {
+    const res = await fetch("https://YOUR-BACKEND.onrender.com/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      document.getElementById('successModal').classList.add('show');
+    }
+  } catch (err) {
+    alert("Server error");
+  }
+}
+
+    function shakeField(id, label) {
+      const field = document.getElementById(id);
+      field.style.borderColor = 'var(--red)';
+      field.style.boxShadow = '0 0 20px rgba(255,34,51,0.4)';
+      field.style.animation = 'shake 0.4s ease';
+      field.focus();
+      setTimeout(() => {
+        field.style.animation = '';
+      }, 400);
+
+      const style = document.createElement('style');
+      style.textContent = '@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)} }';
+      document.head.appendChild(style);
+    }
+
+    function closeModal() {
+      document.getElementById('successModal').classList.remove('show');
+      // Reset form
+      document.querySelectorAll('.form-input').forEach(el => {
+        if (el.tagName === 'SELECT') el.value = '';
+        else el.value = '';
+        el.style.borderColor = '';
+        el.style.boxShadow = '';
+      });
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+      document.querySelectorAll('[data-lucide="check"]').forEach(el => el.style.display = 'none');
+      document.getElementById('medical-detail').style.display = 'none';
+      yearState['2025'] = false;
+      yearState['2026'] = false;
+      document.getElementById('btn2025').className = 'year-btn';
+      document.getElementById('btn2026').className = 'year-btn';
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // Input focus effects
+    document.querySelectorAll('.form-input').forEach(input => {
+      input.addEventListener('focus', function () {
+        this.style.transform = 'scale(1.01)';
+      });
+      input.addEventListener('blur', function () {
+        this.style.transform = 'scale(1)';
+        this.style.borderColor = '';
+        this.style.boxShadow = '';
+      });
+    });
+
+    // Re-init icons on load
+    document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+  </script>
+</body>
+
+</html>
