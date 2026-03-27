@@ -1061,7 +1061,7 @@
           <i data-lucide="calendar" class="icon-red" style="width:14px;height:14px;"></i>
           45 Days
         </div>
-            <div class="stat-chip">
+        <div class="stat-chip">
           <i data-lucide="zap" class="icon-red" style="width:14px;height:14px;"></i>
           20 Sessions
         </div>
@@ -1588,7 +1588,13 @@
     });
 
     // Form submission
-    async function submitForm() {
+  let isSubmitting = false;
+
+async function submitForm() {
+  if (isSubmitting) return; // 🚫 prevent multiple clicks
+
+  const btn = document.querySelector(".submit-btn");
+
   const data = {
     name: document.getElementById('name').value,
     age: document.getElementById('age').value,
@@ -1608,6 +1614,17 @@
   }
 
   try {
+    isSubmitting = true;
+
+    // 🔒 Disable button + loading UI
+    btn.disabled = true;
+    btn.style.opacity = "0.6";
+    btn.innerHTML = `
+      <span style="display:flex;align-items:center;justify-content:center;gap:10px;">
+        ⏳ Submitting...
+      </span>
+    `;
+
     const res = await fetch("https://karthicksregisterbackend.onrender.com/api/register", {
       method: "POST",
       headers: {
@@ -1620,9 +1637,26 @@
 
     if (result.success) {
       document.getElementById('successModal').classList.add('show');
+    } else {
+      throw new Error("Failed");
     }
+
   } catch (err) {
-    alert("Server error");
+    alert("❌ Server error");
+
+    // 🔓 Re-enable button on error
+    btn.disabled = false;
+    btn.style.opacity = "1";
+    btn.innerHTML = `
+      <span style="display:flex;align-items:center;justify-content:center;gap:10px;">
+        <i data-lucide="zap" style="width:20px;height:20px;"></i>
+        ENROLL NOW — IGNITE!
+        <i data-lucide="flame" style="width:20px;height:20px;"></i>
+      </span>
+    `;
+    lucide.createIcons();
+
+    isSubmitting = false;
   }
 }
 
